@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": "16-13-37",
+    "node": "node3",
+    "distance": "50.00",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "16-13-37",
+    "node": "node1",
+    "distance": "197.23",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "16-13-37",
+    "node": "node4",
+    "distance": "174.64",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "16-13-37",
+    "node": "node2",
+    "distance": "104.40",
+    "cordinal direction": "South"
+  },
+  {
+    "timestamp": "16-13-40",
+    "node": "node3",
+    "distance": "39.77",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "16-13-40",
+    "node": "node1",
+    "distance": "177.44",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "16-13-40",
+    "node": "node4",
+    "distance": "151.29",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "16-13-40",
+    "node": "node2",
+    "distance": "100.88",
+    "cordinal direction": "South"
+  },
+  {
+    "timestamp": "16-13-42",
+    "node": "node3",
+    "distance": "40.97",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "16-13-42",
+    "node": "node1",
+    "distance": "159.88",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "16-13-42",
+    "node": "node4",
+    "distance": "127.65",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "16-13-42",
+    "node": "node2",
+    "distance": "104.63",
+    "cordinal direction": "South"
+  },
+  {
+    "timestamp": "16-13-44",
+    "node": "node3",
+    "distance": "53.96",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "16-13-44",
+    "node": "node1",
+    "distance": "144.04",
+    "cordinal direction": "South"
+  },
+  {
+    "timestamp": "16-13-44",
+    "node": "node4",
+    "distance": "107.79",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "16-13-44",
+    "node": "node2",
+    "distance": "109.73",
+    "cordinal direction": "South"
+  },
+  {
+    "timestamp": "16-13-46",
+    "node": "node3",
+    "distance": "66.64",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "16-13-46",
+    "node": "node1",
+    "distance": "133.82",
+    "cordinal direction": "South"
+  },
+  {
+    "timestamp": "16-13-46",
+    "node": "node4",
+    "distance": "90.82",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "16-13-46",
+    "node": "node2",
+    "distance": "118.75",
+    "cordinal direction": "South"
+  }
+]

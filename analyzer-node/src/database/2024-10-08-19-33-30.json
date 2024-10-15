@@ -1,0 +1,242 @@
+[
+  {
+    "timestamp": "19-33-08-2191",
+    "node": "node3",
+    "distance": "87.61",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-08-2211",
+    "node": "node1",
+    "distance": "160.95",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "19-33-08-2211",
+    "node": "node4",
+    "distance": "174.95",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "19-33-08-2222",
+    "node": "node2",
+    "distance": "54.51",
+    "cordinal direction": "South"
+  },
+  {
+    "timestamp": "19-33-11-2824",
+    "node": "node3",
+    "distance": "99.79",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-11-2824",
+    "node": "node1",
+    "distance": "134.25",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "19-33-11-2824",
+    "node": "node4",
+    "distance": "161.73",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "19-33-11-2834",
+    "node": "node2",
+    "distance": "42.71",
+    "cordinal direction": "South"
+  },
+  {
+    "timestamp": "19-33-13-2834",
+    "node": "node3",
+    "distance": "117.70",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-13-2844",
+    "node": "node1",
+    "distance": "106.46",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "19-33-13-2844",
+    "node": "node4",
+    "distance": "151.60",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-13-2844",
+    "node": "node2",
+    "distance": "46.96",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "19-33-15-2824",
+    "node": "node3",
+    "distance": "138.43",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-15-2835",
+    "node": "node1",
+    "distance": "79.80",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "19-33-15-2835",
+    "node": "node4",
+    "distance": "146.44",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-15-2835",
+    "node": "node2",
+    "distance": "63.92",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "19-33-17-2842",
+    "node": "node3",
+    "distance": "159.40",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-17-2862",
+    "node": "node1",
+    "distance": "55.10",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "19-33-17-2862",
+    "node": "node4",
+    "distance": "145.48",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-17-2862",
+    "node": "node2",
+    "distance": "85.31",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "19-33-19-2865",
+    "node": "node3",
+    "distance": "182.21",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-19-2865",
+    "node": "node1",
+    "distance": "32.31",
+    "cordinal direction": "West"
+  },
+  {
+    "timestamp": "19-33-19-2865",
+    "node": "node4",
+    "distance": "149.88",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-19-2875",
+    "node": "node2",
+    "distance": "108.54",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "19-33-21-2832",
+    "node": "node3",
+    "distance": "205.97",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-21-2832",
+    "node": "node1",
+    "distance": "20.63",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-21-2842",
+    "node": "node4",
+    "distance": "158.94",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-21-2842",
+    "node": "node2",
+    "distance": "132.62",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "19-33-23-2823",
+    "node": "node3",
+    "distance": "229.22",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-23-2834",
+    "node": "node1",
+    "distance": "33.00",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-23-2834",
+    "node": "node4",
+    "distance": "170.56",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-23-2834",
+    "node": "node2",
+    "distance": "156.65",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "19-33-25-2878",
+    "node": "node3",
+    "distance": "251.75",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-25-2888",
+    "node": "node1",
+    "distance": "53.84",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-25-2888",
+    "node": "node4",
+    "distance": "183.80",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-25-2888",
+    "node": "node2",
+    "distance": "180.27",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "19-33-27-2821",
+    "node": "node3",
+    "distance": "274.19",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "19-33-27-2831",
+    "node": "node1",
+    "distance": "76.30",
+    "cordinal direction": "East"
+  },
+  {
+    "timestamp": "19-33-27-2831",
+    "node": "node4",
+    "distance": "198.94",
+    "cordinal direction": "North"
+  },
+  {
+    "timestamp": "19-33-27-2831",
+    "node": "node2",
+    "distance": "203.53",
+    "cordinal direction": "East"
+  }
+]

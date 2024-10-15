@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+  <link rel="stylesheet" href="./map.css">
+
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+  <script src="./register.js"></script>
+
+</head>
+<body onload="init()">
+  <header>
+    <!-- ヘッダー -->
+    <h1>地図登録</h1>
+    <!-- 選択タブとかあると良さげかも -->
+  </header>
+  
+  <div>
+    <!-- メイン -->
+    <section>
+      <!-- 地図位置指定 -->
+      <div class="float-wrapper">
+        <div class="float-wrapper-item">
+          <div class="container">
+            <div id="map-select"></div>
+          </div>
+        </div>
+        
+        <div class="float-wrapper-item">
+          <div class="container">
+            <button onclick="btnMapSelect()">位置決定</button>
+            <p id="fixed-map-center-text">{lat, lng}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <!-- 名付け+登録 -->
+      <div class="float-wrapper">
+        <div class="float-wrapper-item">
+          <div class="container">
+            <div id="map-nodes-select"></div>
+          </div>
+        </div>
+        
+        <div class="float-wrapper-item">
+          <div class="container">
+            <button onclick="btnNodesSelect()">ノード位置決定</button>
+            <p id="fixed-map-nodes-text">[{lat, lng}, …]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <!-- 送信フォーム -->
+      <form action="" method="post"></form>
+    </section>
+
+    
+  </div>
+
+  <footer>
+    <!-- フッター -->
+  </footer>
+</body>
+</html>

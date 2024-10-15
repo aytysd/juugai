@@ -1,0 +1,42 @@
+import SensorData from './sensorData.js';
+import PathPredictor from './PathPredictor.js';
+
+// const fs = require('fs');
+import fs from 'fs';
+
+function analyze(filePath) {
+
+
+}
+
+console.log("hello analyzer");
+
+console.log(process.argv[2]);
+
+let filePath = process.argv[2];
+let output_file_path = '/app/src/output/test.json';
+
+
+const sensorData = new SensorData(filePath);
+let data = sensorData.selectData(function(row) {
+    if(row["timestamp"] == '16-31-57') {
+      return true;
+    } else {
+      return false;
+    }
+});
+
+let pathPredictor = new PathPredictor(data, 0.3);
+pathPredictor.execute();
+
+
+const jsonData = JSON.stringify(data, null, 2);
+
+// ファイルに書き込む
+fs.writeFile('test.json', jsonData, (err) => {
+  if (err) {
+    console.error('エラーが発生しました:', err);
+    return;
+  }
+  console.log('JSONファイルが正常に作成されました');
+});

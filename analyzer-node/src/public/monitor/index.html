@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Webapp</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+
+
+</head>
+<body onload="init()">
+  <div id="mapid" style="width: 100%;height: 800px;"></div>
+  <button id="btnTest">テストボタン</button>
+  <form method="POST" action="/gw/database">
+    <label>題名：<input type="text" id="title" name="title"></label>
+    <input type="submit" name="submit" value="検索">
+    hello this is from analyzer monitor
+</form>
+  
+  <script src="./practice.js"></script>
+</body>
+</html>

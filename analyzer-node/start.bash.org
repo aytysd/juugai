@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run -it -p 2222:22 -v ./config/sshd_config:/etc/ssh/sshd_config -v ./.ssh:/root/.ssh -v ./.ssh/:/home/ayato/.ssh analyzer-node /bin/bash
+# docker run -it -p 2222:22 -v ./.ssh:/root/.ssh analyzer-node /bin/sh
