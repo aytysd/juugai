@@ -2,9 +2,20 @@ import { Circle, findIntersections } from './Circle.js';
 import { Point, getDistance } from './Point.js';
 import nodes from './Node.js';
 
+
+export const Result = {
+  FAILED: 'FAILED',
+  SUCCESS: 'SUCCESS'
+}
+
+
+export 
+
+
 export default function PredictPoint(data) {
   if(data.length <= 2) {
     console.log("data is not enough....");
+    console.log(`data.length: ${data.length}`);
   }
 
   let circles = [];

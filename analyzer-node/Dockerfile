@@ -7,6 +7,7 @@ WORKDIR /app
 
 COPY ./package*.json ./
 RUN npm install
+RUN npm install -g ts-node typescript @types/node
 # RUN apk add --no-cache vim
 #Q RUN apk add --no-cache xeyes
 
