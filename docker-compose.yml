@@ -27,7 +27,6 @@ services:
       volumes:
         - ./analyzer-node/src:/app/src
         - route_database:/app/route_database
-        - ./analyzer-node/.ssh:/root/.ssh
       container_name: analyzer-node
       # command: node /app/src/server.js
       tty: true 

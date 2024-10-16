@@ -1,4 +1,4 @@
-import { analyze } from './analyze/analyze.js';
+import { analyze } from './components/analyze.js';
 
 import express from 'express';
 import multer from 'multer';
