@@ -1,23 +1,23 @@
 version: "3"
 services:
   # リバースプロキシ
-  reverse-proxy:
-    build: ./reverse-proxy
-    image: reverse-proxy-img:latest
-    container_name: reverse-proxy
-    depends_on:
-      - notification-app
-      - visualizer-app
-      - analyzer-node
-    ports:
-      - 80:80
-    volumes:
-      - ./reverse-proxy/config/nginx.conf:/etc/nginx/nginx.conf
-    networks:
-      - surface
-      - inside
-    environment:
-      - TZ=Asia/Tokyo
+  # reverse-proxy:
+  #   build: ./reverse-proxy
+  #   image: reverse-proxy-img:latest
+  #   container_name: reverse-proxy
+  #   depends_on:
+  #     - notification-app
+  #     - visualizer-app
+  #     - analyzer-node
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - ./reverse-proxy/config/nginx.conf:/etc/nginx/nginx.conf
+  #   networks:
+  #     - surface
+  #     - inside
+  #   environment:
+  #     - TZ=Asia/Tokyo
 
   # データ解析ノード
   analyzer-node:
@@ -26,40 +26,30 @@ services:
       volumes:
         - ./analyzer-node/mount_ws:/app/src
       container_name: analyzer-node
-      # command: node /app/src/server.js
+      command: node /app/src/dist/server.js
       tty: true 
       init: true
       working_dir: /app/
       networks:
-        - inside
+        inside:
+          ipv4_address: 192.168.10.3
 
-#   store-srv: 
-#       build: ./store-srv
-#       image: store-srv
-#       container_name: store-srv
-#       volumes:
-#         - ./store-srv/src:/app/src
-#       command: node /app/src/server.js
-#       tty: true 
-#       init: true
-#       working_dir: /app/
-#       networks:
-#         - inside
+
 
   # 通知アプリ
-  notification-app:
-    # build: ./notification-app
-    # image: notification-app-img
-    image: nginx # demo image
-    container_name: notification-app
-    # ports:
-    #   - 
-    # volumes:
-    #   - 
-    # command: echo notification-app > /usr/share/nginx/html/index.html
-    # echoコマンドが終了するとコンテナもなぜか終了するからコメントアウトした
-    networks:
-      - inside
+  # notification-app:
+  #   # build: ./notification-app
+  #   # image: notification-app-img
+  #   image: nginx # demo image
+  #   container_name: notification-app
+  #   # ports:
+  #   #   - 
+  #   # volumes:
+  #   #   - 
+  #   # command: echo notification-app > /usr/share/nginx/html/index.html
+  #   # echoコマンドが終了するとコンテナもなぜか終了するからコメントアウトした
+  #   networks:
+  #     - inside
 
   # マップアプリ(ビジュアライザ)
   visualizer-app:
@@ -75,9 +65,10 @@ services:
     stdin_open: true
     ports:
       - 8080:80
-    # networks:
-    #   inside:
-    #     ipv4_address: 192.168.10.5
+    networks:
+      inside:
+        ipv4_address: 192.168.10.5
+      surface:
 
 
 

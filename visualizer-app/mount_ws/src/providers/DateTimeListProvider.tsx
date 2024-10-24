@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 
-import temp from '@/src/database/temp.json';
+import temp from '@/database/temp.json';
 
 interface DateTimeListContextType {
     list: string[];
@@ -22,7 +22,15 @@ export const DateTimeListProvider: React.FC<{ children: React.ReactNode }> = ({ 
         setError(null);
         try {
             // const response = await axios.get<string[]>('/api/files');
-            const temp = await import('@/src/database/temp.json');
+            console.log("hello world!!!");
+            const url = 'http://192.168.10.3:2000/query'
+            const response = await fetch(url, {
+                method: 'GET',
+            });
+            console.log(response.body);
+
+            const temp = await import('@/database/temp.json');
+            
             const list: string[] = temp.default;
             setList(list);
         } catch (err) {

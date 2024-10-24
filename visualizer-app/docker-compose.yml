@@ -1,7 +1,7 @@
 version: '3'
 services:
   visualizer-app:
-    build: ./visualizer-app
+    build: ./
     image: visualizer-app
     # image: nginx  # デモ用
     container_name: visualizer-app

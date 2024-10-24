@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 
 import { graphContext  } from '../(BaseGraph)/BaseGraphComponent';
 
-import { useSelectedDataContext } from '@/src/providers/SelectedDataProvider';
-import { useSelectedTimingContext } from '@/src/providers/SelectedTimingProvider';
+import { useSelectedDataContext } from '@/providers/SelectedDataProvider';
+import { useSelectedTimingContext } from '@/providers/SelectedTimingProvider';
 
 interface SensorNodesComponentProps {
     children?: React.ReactNode;

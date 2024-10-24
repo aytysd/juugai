@@ -5,8 +5,8 @@ import React, { useState, useEffect } from "react";
 import type { SensorData } from '../(SensorNode)/SensorNodesComponent';
 import type { Path } from '../(Path)/AnimalPathComponent';
 
-import { useDateTimeContext } from '@/src/providers/DateTimeListProvider';
-import { useSelectedDataContext } from '@/src/providers/SelectedDataProvider';
+import { useDateTimeContext } from '@/providers/DateTimeListProvider';
+import { useSelectedDataContext } from '@/providers/SelectedDataProvider';
 
 interface DateTimeSelectorProps {
   children?: React.ReactNode;

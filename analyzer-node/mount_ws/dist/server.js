@@ -35,6 +35,10 @@ app.listen(port, () => {
     console.log(`Start app at http://localhost:${port}`);
     console.log(`Datafile directory : ${databaseFile}`);
 });
+app.get("/query", (req, res) => {
+    console.log('hello');
+    res.send("this is from analyzer-node");
+});
 app.post("/database", upload.single('file'), (req, res) => {
     // console.log(`Datafile directory : ${databaseFile}`);
     console.log('File  uploaded:', req.file);
