@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "tsc_build",
+            "type": "shell",
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "command": "tsc",
+            "args": ["-p", "tsconfig.json"],
+            // "args": ["--build", "--force"],
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/c"
+                    ]
+                }
+            }
+        }
+    ]
+}

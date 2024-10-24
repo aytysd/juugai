@@ -23,10 +23,8 @@ services:
   analyzer-node:
       build: ./analyzer-node
       image: analyzer-node
-      # command: echo analizer-node > /usr/share/nginx/html/index.html
       volumes:
-        - ./analyzer-node/src:/app/src
-        - route_database:/app/route_database
+        - ./analyzer-node/mount_ws:/app/src
       container_name: analyzer-node
       # command: node /app/src/server.js
       tty: true 
@@ -66,18 +64,20 @@ services:
   # マップアプリ(ビジュアライザ)
   visualizer-app:
     build: ./visualizer-app
-    image: visualizer-app-img
-    # image: nginx  # デモ用
+    image: visualizer-app
     container_name: visualizer-app
-    # ports:
-    #   - 80:80
     volumes:
-      - ./visualizer-app/src:/app/src
-      - route_database:/app/route_database
-    command: node /app/src/server.js
+      - ./visualizer-app/mount_ws:/app/src
+      - ./visualizer-app/config/httpd.conf:/etc/apache2/httpd.conf
     init: true
-    networks:
-      - inside
+    command: ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+    tty: true
+    stdin_open: true
+    ports:
+      - 8080:80
+    # networks:
+    #   inside:
+    #     ipv4_address: 192.168.10.5
 
 
 
@@ -104,5 +104,3 @@ networks:
         - subnet: 192.168.255.0/29
 
 
-volumes:
-    route_database:

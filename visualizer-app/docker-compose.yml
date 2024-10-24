@@ -1,0 +1,18 @@
+version: '3'
+services:
+  visualizer-app:
+    build: ./visualizer-app
+    image: visualizer-app
+    # image: nginx  # デモ用
+    container_name: visualizer-app
+    ports:
+      - 8080:80
+    volumes:
+      - ./mount_ws:/app/src
+      - ./config/httpd.conf:/etc/apache2/httpd.conf
+    init: true
+    command: ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+    tty: true 
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
