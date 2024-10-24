@@ -5,9 +5,9 @@ import SensorNodesComponent from './(SensorNode)/SensorNodesComponent';
 import AnimalPathComponent from './(Path)/AnimalPathComponent';
 import DateTimeSelector from './(DateTimeUI)/DateTimeUI';
 import TimeSelector from './(DateTimeUI)/TimeUI';
-import { SelectedDataProvider } from '@/src/providers/SelectedDataProvider';
-import { DateTimeListProvider } from '@/src/providers/DateTimeListProvider';
-import { SelectedTimingProvider } from '@/src/providers/SelectedTimingProvider';
+import { SelectedDataProvider } from '@/providers/SelectedDataProvider';
+import { DateTimeListProvider } from '@/providers/DateTimeListProvider';
+import { SelectedTimingProvider } from '@/providers/SelectedTimingProvider';
 
 const AnalyzerNode = (): JSX.Element => {
 

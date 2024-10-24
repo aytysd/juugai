@@ -4,9 +4,9 @@ import { Path } from "../pages/AnalyzerNode/(Path)/AnimalPathComponent";
 import { SensorData } from "../pages/AnalyzerNode/(SensorNode)/SensorNodesComponent";
 
 // const pathDataContext = require.context('@/src/database/PathData');
-import rawPath from '@/src/database/PathData/2024-10-22-13-49-57-traj.json';
-import rawSensorData from '@/src/database/SensorData/2024-10-22-13-49-57.json';
-import rawPredictedPath from '@/src/database/PredictedPathData/2024-10-22-13-49-57-out.json';
+import rawPath from '@/database/PathData/2024-10-22-13-49-57-traj.json';
+import rawSensorData from '@/database/SensorData/2024-10-22-13-49-57.json';
+import rawPredictedPath from '@/database/PredictedPathData/2024-10-22-13-49-57-out.json';
 
 
 interface SelectedDataContextType {

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useSelectedDataContext } from "@/src/providers/SelectedDataProvider";
-import { useSelectedTimingContext } from "@/src/providers/SelectedTimingProvider";
+import { useSelectedDataContext } from "@/providers/SelectedDataProvider";
+import { useSelectedTimingContext } from "@/providers/SelectedTimingProvider";
 import { PathRow } from '../(Path)/AnimalPathComponent';
 
 interface TimeSelectorProps {

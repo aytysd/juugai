@@ -39,4 +39,4 @@ export default function main(fp: string) {
 
 };
 
-main('./database/SensorData/2024-10-22-13-49-57.json');
+// main('./database/SensorData/2024-10-22-13-49-57.json');
