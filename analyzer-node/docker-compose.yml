@@ -1,0 +1,14 @@
+version: '3'
+services:
+  analyzer-node:
+      build: ./analyzer-node
+      image: analyzer-node
+      # command: echo analizer-node > /usr/share/nginx/html/index.html
+      volumes:
+        - ./mount_ws:/app/src
+      container_name: analyzer-node
+      command: /bin/sh
+      tty: true 
+      stdin_open: true
+      init: true
+      working_dir: /app/

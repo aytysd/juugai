@@ -6,12 +6,10 @@ FROM node:20-alpine
 WORKDIR /app
 
 COPY ./package*.json ./
-RUN npm install
-RUN npm install -g ts-node typescript @types/node
+# RUN npm install
 # RUN apk add --no-cache vim
 #Q RUN apk add --no-cache xeyes
 
-RUN apk update && apk add --no-cache sqlite
 RUN apk add --no-cache vim
 
 # RUN apk add --no-cache openssh

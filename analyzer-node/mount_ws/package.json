@@ -1,0 +1,25 @@
+{
+    "name": "analyzer-node",
+    "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "main": "./src/server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node ./src/server.js"
+    },
+    "dependencies": {
+        "@types/express": "^5.0.0",
+        "@types/multer": "^1.4.12",
+        "@types/node": "^22.7.5",
+        "@types/numeric": "^1.2.6",
+        "express": "~4.18.2",
+        "mathjs": "^11.8.0",
+        "mathjs-simple-integral": "^0.1.1",
+        "moment": "^2.29.4",
+        "multer": "~1.4.5-lts.1",
+        "numeric": "^1.2.6"
+    },
+    "devDependencies": {
+        "typescript": "^5.6.3"
+    }
+}
