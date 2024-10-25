@@ -15,6 +15,11 @@ interface RouteProviderProps {
 const RouteProvider: React.FC<RouteProviderProps> = ({ children }) => {
   return (
       <BrowserRouter>
+        <nav>
+          <Link to="/analyzer-node">
+            Analyzer Node
+          </Link>
+        </nav>
         <Routes>
           <Route path="/analyzer-node" element={<AnalyzerNode />} />
         </Routes>

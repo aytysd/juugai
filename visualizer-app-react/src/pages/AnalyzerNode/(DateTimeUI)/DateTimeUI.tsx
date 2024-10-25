@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import type { SensorData } from '../(SensorNode)/SensorNodesComponent';
 import type { Path } from '../(Path)/AnimalPathComponent';
@@ -21,15 +21,6 @@ const DateTimeSelector: React.FC<DateTimeSelectorProps> = ({ children, onAnalyze
   const { update } = useSelectedDataContext();
 
 
-  useEffect(() => {
-    // ここにページロード時に実行したいコードを書きます
-    // console.log('ページがロードされました');
-
-    // データフェッチの例
-    refreshList();
-  }, []); // 空の依存配列
-
-
   const handleRefresh = () => {
     refreshList();
   };
@@ -38,16 +29,16 @@ const DateTimeSelector: React.FC<DateTimeSelectorProps> = ({ children, onAnalyze
     update(datetime);
   };
 
-  console.log(list);
-
-
+  if(isLoading) {
+    return <div>loading..........</div>
+  }
 
   return (
       <div>
         {children}
         <h2>ファイルリスト</h2>
         <ul>
-          { list.length !== 0 &&
+          { list.length !== 0 ? (
           list.map((datetime, index) => (
             <li
               key={index}
@@ -59,7 +50,14 @@ const DateTimeSelector: React.FC<DateTimeSelectorProps> = ({ children, onAnalyze
             >
               {datetime}
             </li>
-          ))}
+          ))
+          ) : (
+            <>
+              {console.log(list)}
+              <div>nothing found....</div>
+            </>
+          )
+          }
         </ul>
         <button
           onClick={handleRefresh}

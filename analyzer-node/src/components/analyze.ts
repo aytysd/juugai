@@ -12,7 +12,7 @@ export default function main(fp: string) {
   const filename = path.basename(fp);
   const nameWithoutExt = path.parse(filename).name;
 
-  const outputFilePath = `./database/PredictedPathData/${nameWithoutExt}-out.json`;
+  const outputFilePath = `/app/database/PredictedPathData/${nameWithoutExt}-out.json`;
 
 
   const sensorData = extractFileData(fp);

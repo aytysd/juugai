@@ -36,8 +36,6 @@ const upload = multer({ storage: storage });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// const databaseFile = __dirname + "/public/database/user.json";
-const databaseFile =`${__dirname}/database/user.json`;
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -46,37 +44,15 @@ app.use(express.urlencoded({extended:true}));
 // 接待したポートでサーバを待機状態にする
 app.listen(port, () => {
     console.log(`Start app at http://localhost:${port}`);
-    console.log(`Datafile directory : ${databaseFile}`);
+    console.log(`Datafile directory : /app/database`);
 });
 
-app.get("/query", (req: Request, res: Response) => {
-  console.log('hello');
-  res.send("this is from analyzer-node");
-})
 
-app.post("/database" , upload.single('file'), (req: Request, res: Response) => {
-    // console.log(`Datafile directory : ${databaseFile}`);
-
+app.post("/" , upload.single('file'), (req: Request, res: Response) => {
   console.log('File  uploaded:', req.file);
 
   if (req.file) {
-    const outputFilePath = analyze(`/app/${req.file.path}`);
-    fs.readFile(outputFilePath as string, 'utf8', (err: NodeJS.ErrnoException | null, data: string) => {
-      if (err) {
-        console.error('Error reading file:', err);
-        return;
-      }
-      let jsonText = data;
-
-      try {
-        res.send(jsonText);
-      } catch (err) {
-        console.log(err);
-        res.send(false);
-      }
-
-    });
-
+    analyze(`/app/${req.file.path}`);
   }
 
 })

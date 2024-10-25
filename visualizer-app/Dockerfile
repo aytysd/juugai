@@ -2,10 +2,13 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-RUN apk add --no-cache apache2
-RUN apk add --no-cache vim
+# RUN apk add --no-cache apache2
+COPY package*.json ./
 
-EXPOSE 80
+RUN apk add --no-cache vim
+RUN npm install
+
+# EXPOSE 80
 
 
 # RUN httpd

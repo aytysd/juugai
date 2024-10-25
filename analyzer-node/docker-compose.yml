@@ -1,11 +1,12 @@
 version: '3'
 services:
   analyzer-node:
-      build: ./analyzer-node
+      build: .
       image: analyzer-node
       # command: echo analizer-node > /usr/share/nginx/html/index.html
       volumes:
-        - ./mount_ws:/app/src
+        - ./src:/app/src
+        - ../database:/app/database
       container_name: analyzer-node
       command: /bin/sh
       tty: true 

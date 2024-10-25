@@ -1,17 +1,18 @@
 version: '3'
 services:
   visualizer-app:
-    build: ./
+    build: .
     image: visualizer-app
     # image: nginx  # デモ用
     container_name: visualizer-app
     ports:
-      - 8080:80
+      - 3000:3000
     volumes:
-      - ./mount_ws:/app/src
-      - ./config/httpd.conf:/etc/apache2/httpd.conf
+      - ./src:/app/src
+      - ./src/config/httpd.conf:/etc/apache2/httpd.conf
+      - ../database:/app/database
     init: true
-    command: ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+    command: node src/app.js
     tty: true 
     stdin_open: true
     environment:

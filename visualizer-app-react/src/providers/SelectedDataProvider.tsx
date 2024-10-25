@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useContext } from "react";
+import React, { createContext, useState, useContext } from "react";
 
 import { Path } from "../pages/AnalyzerNode/(Path)/AnimalPathComponent";
 import { SensorData } from "../pages/AnalyzerNode/(SensorNode)/SensorNodesComponent";
@@ -13,6 +13,8 @@ interface SelectedDataContextType {
     path: Path;
     sensorData: SensorData;
     predictedPath: Path; 
+    isLoading: Boolean;
+    error: string | null;
     update: (selectedDateTime: string) => void;
 }
 
@@ -22,29 +24,39 @@ export const SelectedDataProvider: React.FC<{ children: React.ReactNode }> = ({ 
     const [path, setPath] = useState<Path>([]);
     const [sensorData, setSensorData] = useState<SensorData>([]);
     const [predictedPath, setPredictedPath] = useState<Path>([]);
+    const [isLoading, setIsLoading] = useState<Boolean>(false);
+    const [error, setError] = useState<string | null>(null);
     
     const update = async (selectedDateTime: string) => {
-        // const pathDataPath = `@/src/database/PathData/${selectedDateTime}-traj.json`;
-        // const pathDataPath = `../database/PathData/2024-10-22-13-49-04-traj.json`;
-        // const pathDataPath = '@/src/database/temp.json'
-        // const pathDataPath = '@/src/database/temp.json';
-        // const sensorDataPath = `@/src/database/SensorData/${selectedDateTime}.json`;
+        setIsLoading(true);
+        setError(null);
+        try {
+            // const response = await axios.get<string[]>('/api/files');
+            const response = await fetch('/file', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ datetime: selectedDateTime })
+            });
+            const { path, sensorData, predictedPath } = await response.json();
+            console.log(path);
+            console.log(predictedPath);
+            console.log(sensorData);
 
-        // const temp1 = await import('@/src/database/temp.json');
-        const path = rawPath;
-        // const temp2 = await import(sensorDataPath);
-        const sensorData = rawSensorData;
-        const predictedPath = rawPredictedPath;
-
-        console.log('hello');
-
-        setPath(path);
-        setSensorData(sensorData);
-        setPredictedPath(predictedPath);
+            setPath(path);
+            setSensorData(sensorData);
+            setPredictedPath(predictedPath);
+        } catch (err) {
+            setError('ファイルリストの取得に失敗しました');
+            console.error('Error fetching file list:', err);
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     return (
-        <SelectedDataContext.Provider value={{ path, sensorData, predictedPath, update }}>
+        <SelectedDataContext.Provider value={{ path, sensorData, predictedPath, update, isLoading, error }}>
             {children}
         </SelectedDataContext.Provider>
     );

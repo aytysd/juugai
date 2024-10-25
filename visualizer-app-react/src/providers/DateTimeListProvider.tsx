@@ -22,17 +22,13 @@ export const DateTimeListProvider: React.FC<{ children: React.ReactNode }> = ({ 
         setError(null);
         try {
             // const response = await axios.get<string[]>('/api/files');
-            console.log("hello world!!!");
-            const url = 'http://192.168.10.3:2000/query'
-            const response = await fetch(url, {
+            const response = await fetch('/file_list', {
                 method: 'GET',
             });
-            console.log(response.body);
+            const text = await response.json();
+            console.log(text);
 
-            const temp = await import('@/database/temp.json');
-            
-            const list: string[] = temp.default;
-            setList(list);
+            setList(text);
         } catch (err) {
             setError('ファイルリストの取得に失敗しました');
             console.error('Error fetching file list:', err);
@@ -44,14 +40,14 @@ export const DateTimeListProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
     useEffect(() => {
         fetchDateTimeList();
-    });
+    }, []);
 
     const refreshList = () => {
         fetchDateTimeList();
     };
 
     return (
-        <DateTimeListContext.Provider value={{ list: list, isLoading, error, refreshList }}>
+        <DateTimeListContext.Provider value={{ list, isLoading, error, refreshList }}>
             {children}
         </DateTimeListContext.Provider>
     );

@@ -57,8 +57,8 @@ services:
     image: visualizer-app
     container_name: visualizer-app
     volumes:
-      - ./visualizer-app/mount_ws:/app/src
-      - ./visualizer-app/config/httpd.conf:/etc/apache2/httpd.conf
+      - ./visualizer-app/src:/app/src
+      - ./visualizer-app/src/config/httpd.conf:/etc/apache2/httpd.conf
     init: true
     command: ["/usr/sbin/httpd", "-D", "FOREGROUND"]
     tty: true
