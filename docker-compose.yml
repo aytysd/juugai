@@ -1,38 +1,38 @@
 version: "3"
 services:
   # リバースプロキシ
-  # reverse-proxy:
-  #   build: ./reverse-proxy
-  #   image: reverse-proxy-img:latest
-  #   container_name: reverse-proxy
-  #   depends_on:
-  #     - notification-app
-  #     - visualizer-app
-  #     - analyzer-node
-  #   ports:
-  #     - 80:80
-  #   volumes:
-  #     - ./reverse-proxy/config/nginx.conf:/etc/nginx/nginx.conf
-  #   networks:
-  #     - surface
-  #     - inside
-  #   environment:
-  #     - TZ=Asia/Tokyo
+  reverse-proxy:
+    build: ./reverse-proxy
+    image: reverse-proxy-img:latest
+    container_name: reverse-proxy
+    depends_on:
+      # - notification-app
+      - visualizer-app
+      - analyzer-node
+    ports:
+      - 80:80
+    volumes:
+      - ./reverse-proxy/config/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - surface
+      - inside
+    environment:
+      - TZ=Asia/Tokyo
 
   # データ解析ノード
   analyzer-node:
       build: ./analyzer-node
       image: analyzer-node
       volumes:
-        - ./analyzer-node/mount_ws:/app/src
+        - ./analyzer-node/src:/app/src
+        - ./database:/app/database
       container_name: analyzer-node
       command: node /app/src/dist/server.js
       tty: true 
       init: true
       working_dir: /app/
       networks:
-        inside:
-          ipv4_address: 192.168.10.3
+        - inside
 
 
 
@@ -59,16 +59,16 @@ services:
     volumes:
       - ./visualizer-app/src:/app/src
       - ./visualizer-app/src/config/httpd.conf:/etc/apache2/httpd.conf
+      - ./database:/app/database
     init: true
-    command: ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+    command: node src/app.js
     tty: true
     stdin_open: true
     ports:
-      - 8080:80
+      - 3000:3000
     networks:
-      inside:
-        ipv4_address: 192.168.10.5
-      surface:
+      - inside
+      - surface
 
 
 
@@ -78,20 +78,20 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 192.168.0.0/30
+        - subnet: 192.168.0.0/24
   inside:
     driver: bridge
     internal: true
     ipam:
       driver: default
       config:
-        - subnet: 192.168.10.0/28
+        - subnet: 192.168.10.0/24
   db-bus:
     driver: bridge
     internal: true
     ipam:
       driver: default
       config:
-        - subnet: 192.168.255.0/29
+        - subnet: 192.168.255.0/24
 
 

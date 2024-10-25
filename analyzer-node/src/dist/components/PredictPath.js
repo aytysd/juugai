@@ -5,7 +5,6 @@ export default function PredictPath(sensorData, ttr) {
     const endTime = sensorData[sensorData.length - 1]["timestamp"];
     let predictedPath = [];
     for (let t = startTime; t.isBefore(endTime); t.add(1, 'seconds')) {
-        console.log(t.format('HH-mm-ss'));
         const selectedSensorData = sensorData.filter((data) => {
             const dataTime = moment(data["timestamp"], "HH-mm-ss");
             const diff = Math.abs(t.diff(dataTime));

@@ -43,14 +43,11 @@ export default function PredictPoint(data) {
         }
         const thirdNode = targetData[2].node;
         const intersecs = findIntersections(circles[0], circles[1]);
-        console.log(intersecs.type);
         if (intersecs.type == FindIntersectionsResultType.FOUND) {
             const d1 = getDistance(intersecs.results[0], thirdNode.pos);
             const d2 = getDistance(intersecs.results[1], thirdNode.pos);
             const likelihood1 = Math.abs(d1 - targetData[2].distance);
             const likelihood2 = Math.abs(d2 - targetData[2].distance);
-            console.log('intersecs[0].x:', intersecs.results[0].x);
-            console.log('intersecs[1].x:', intersecs.results[1].x);
             likelihoods.push({
                 p: likelihood1 < likelihood2 ? intersecs.results[0] : intersecs.results[1],
                 l: likelihood1 < likelihood2 ? likelihood1 : likelihood2,

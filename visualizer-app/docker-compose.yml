@@ -12,7 +12,7 @@ services:
       - ./src/config/httpd.conf:/etc/apache2/httpd.conf
       - ../database:/app/database
     init: true
-    command: node src/app.js
+    command: node /app/src/app.js
     tty: true 
     stdin_open: true
     environment:

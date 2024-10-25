@@ -12,7 +12,11 @@ const port = 2000;
 
 const storage = multer.diskStorage({
   destination: function (req: Request, file: Express.Multer.File, cb:any) : void{
-    cb(null, 'src/database/');
+    if(file.originalname === "traj.json") {
+      cb(null, '/app/database/PathData');
+    } else if(file.originalname === "sensorData.json") {
+      cb(null, '/app/database/SensorData');
+    }
   },
   filename: function (req: Request, file: Express.Multer.File, cb:any) : void{
     const jstOffset = 9 * 60 * 60 * 1000; // 9時間をミリ秒に変換
@@ -25,7 +29,13 @@ const storage = multer.diskStorage({
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
 
-    const filename = `${year}-${month}-${day}-${hours}-${minutes}-${seconds}.json`;
+    let filename = "";
+
+    if(file.originalname === "traj.json") {
+      filename = `${year}-${month}-${day}-${hours}-${minutes}-${seconds}-traj.json`;
+    } else if(file.originalname === "sensorData.json") {
+      filename = `${year}-${month}-${day}-${hours}-${minutes}-${seconds}.json`;
+    }
 
     cb(null, filename);
   }
@@ -48,12 +58,17 @@ app.listen(port, () => {
 });
 
 
-app.post("/" , upload.single('file'), (req: Request, res: Response) => {
+app.post("/sensor-data" , upload.single('file'), (req: Request, res: Response) => {
   console.log('File  uploaded:', req.file);
-
   if (req.file) {
-    analyze(`/app/${req.file.path}`);
+    analyze(req.file.path);
+    res.send("success!!");
   }
-
+    res.send("failed!!");
 })
+
+app.post("/traj-data" , upload.single('file'), (req: Request, res: Response) => {
+  console.log('File  uploaded:', req.file);
+})
+
 
