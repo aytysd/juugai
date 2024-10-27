@@ -9,8 +9,8 @@ import { PathData } from '@/types/PathData';
 
 
 export default function PredictPath(sensorData: SensorData, ttr: number) {
-  const startTime = sensorData[0]["timestamp"];
-  const endTime = sensorData[sensorData.length - 1]["timestamp"];
+  const startTime = moment(sensorData[0]["timestamp"], "HH-mm-ss").clone();
+  const endTime = moment(sensorData[sensorData.length - 1]["timestamp"], "HH-mm-ss").clone();
 
   let predictedPath: PathData = [];
 
@@ -18,10 +18,12 @@ export default function PredictPath(sensorData: SensorData, ttr: number) {
     const selectedSensorData = sensorData.filter(
       (data) => {
         const dataTime = moment(data["timestamp"], "HH-mm-ss");
-        const diff = Math.abs(t.diff(dataTime));
 
-        if (diff <= 0) return true;
-        else return false;
+        if (t.isSame(dataTime)) {
+          return true;
+        } else {
+          return false;
+        } 
 
       }
     );

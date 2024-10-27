@@ -1,17 +1,18 @@
 import moment from 'moment';
 import PredictPoint, { PredictPointResultType } from './PredictPoint.js';
 export default function PredictPath(sensorData, ttr) {
-    const startTime = sensorData[0]["timestamp"];
-    const endTime = sensorData[sensorData.length - 1]["timestamp"];
+    const startTime = moment(sensorData[0]["timestamp"], "HH-mm-ss").clone();
+    const endTime = moment(sensorData[sensorData.length - 1]["timestamp"], "HH-mm-ss").clone();
     let predictedPath = [];
     for (let t = startTime; t.isBefore(endTime); t.add(1, 'seconds')) {
         const selectedSensorData = sensorData.filter((data) => {
             const dataTime = moment(data["timestamp"], "HH-mm-ss");
-            const diff = Math.abs(t.diff(dataTime));
-            if (diff <= 0)
+            if (t.isSame(dataTime)) {
                 return true;
-            else
+            }
+            else {
                 return false;
+            }
         });
         let predictedPoint = PredictPoint(selectedSensorData);
         // console.log(predictedPoint.type);

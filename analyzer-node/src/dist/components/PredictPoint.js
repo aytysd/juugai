@@ -33,25 +33,32 @@ export default function PredictPoint(data) {
     // let thirdNode: Node | undefined = undefined;
     for (let i = 0; i < combination.length; i++) {
         const targetData = combination[i];
-        let circles = [];
-        for (let j = 0; j < 2; j++) {
-            const element = targetData[j];
-            const node = element["node"];
-            const distance = element["distance"];
-            const circle = { center: node.pos, radius: distance };
-            circles.push(circle);
-        }
-        const thirdNode = targetData[2].node;
-        const intersecs = findIntersections(circles[0], circles[1]);
-        if (intersecs.type == FindIntersectionsResultType.FOUND) {
-            const d1 = getDistance(intersecs.results[0], thirdNode.pos);
-            const d2 = getDistance(intersecs.results[1], thirdNode.pos);
-            const likelihood1 = Math.abs(d1 - targetData[2].distance);
-            const likelihood2 = Math.abs(d2 - targetData[2].distance);
-            likelihoods.push({
-                p: likelihood1 < likelihood2 ? intersecs.results[0] : intersecs.results[1],
-                l: likelihood1 < likelihood2 ? likelihood1 : likelihood2,
-            });
+        for (let k = 0; k < 3; k++) {
+            let circles = [];
+            let thirdNode = undefined;
+            for (let j = 0; j < 3; j++) {
+                const element = targetData[j];
+                if (j === k) {
+                    thirdNode = element["node"];
+                }
+                else {
+                    const node = element["node"];
+                    const distance = element["distance"];
+                    const circle = { center: node.pos, radius: distance };
+                    circles.push(circle);
+                }
+            }
+            const intersecs = findIntersections(circles[0], circles[1]);
+            if (intersecs.type == FindIntersectionsResultType.FOUND) {
+                const d1 = getDistance(intersecs.results[0], thirdNode.pos);
+                const d2 = getDistance(intersecs.results[1], thirdNode.pos);
+                const likelihood1 = Math.abs(d1 - targetData[2].distance);
+                const likelihood2 = Math.abs(d2 - targetData[2].distance);
+                likelihoods.push({
+                    p: likelihood1 < likelihood2 ? intersecs.results[0] : intersecs.results[1],
+                    l: likelihood1 < likelihood2 ? likelihood1 : likelihood2,
+                });
+            }
         }
     }
     const mostLikely = likelihoods.reduce((min, current) => {

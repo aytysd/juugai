@@ -8,7 +8,7 @@ export default function extractFileData(fp) {
         const rawData = fs.readFileSync(fp, 'utf8');
         const jsonData = JSON.parse(rawData);
         var processedJsonData = jsonData.map((value, index, array) => {
-            const ts = moment(value["timestamp"], "HH-mm-ss-SSSS");
+            const ts = moment(value["timestamp"], "HH-mm-ss");
             const distance = value["distance"];
             const node = nodes.get(value["node"]);
             const cordinalDirectionInStr = value["cordinalDirection"];
