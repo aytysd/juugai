@@ -25,6 +25,6 @@ export default function main(fp) {
     return outputFilePath;
 }
 ;
-main('/app/database/SensorData/2024-10-25-18-49-27.json');
+// main('/app/database/SensorData/2024-10-25-18-49-27.json');
 // main('../../database/SensorData/2024-10-25-18-49-27.json');
 //# sourceMappingURL=analyze.js.map
