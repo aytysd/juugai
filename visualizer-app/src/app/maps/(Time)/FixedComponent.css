@@ -1,0 +1,17 @@
+.fixed-container {
+  position: fixed; /* 固定位置 */
+  right: 10;       /* 右端に配置 */
+  top: 50%;       /* 垂直中央に配置 */
+  transform: translateY(-50%); /* 垂直中央に調整 */
+  background-color: white; /* 背景色 */
+  padding: 10px; /* パディング */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* シャドウ効果 */
+  max-width: 300px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.fixed-content {
+  /* コンテンツのスタイルを追加 */
+}

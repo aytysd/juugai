@@ -1,0 +1,19 @@
+.button {
+  cursor: pointer; /* ポインタカーソル */
+  padding: 10px 15px; /* パディング */
+  margin: 5px 0; /* マージン */
+  background-color: #007bff; /* 背景色 */
+  color: white; /* テキスト色 */
+  border: none; /* ボーダーなし */
+  border-radius: 5px; /* 角を丸くする */
+  text-align: center; /* テキストを中央揃え */
+  display: block; /* 自動幅調整のためにインラインブロックに設定 */
+  width: auto; /* 幅を自動に設定 */
+  max-width: calc(100% - 0px); /* 最大幅を親要素の幅に合わせる */
+  box-sizing: border-box; /* パディングとボーダーを含めた幅計算 */
+  transition: background-color 0.3s ease; /* ホバー時のトランジション */
+}
+
+.button:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+}

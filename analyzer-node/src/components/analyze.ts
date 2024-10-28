@@ -12,7 +12,8 @@ export default function main(fp: string) {
   const filename = path.basename(fp);
   const nameWithoutExt = path.parse(filename).name;
 
-  const outputFilePath = `/app/database/PredictedPathData/${nameWithoutExt}-out.json`;
+  const outputFilePath = `../../database/PredictedPathData/${nameWithoutExt}-out.json`;
+  // const outputFilePath = `/app/database/PredictedPathData/${nameWithoutExt}-out.json`;
 
 
   const sensorData = extractFileData(fp);
@@ -40,4 +41,4 @@ export default function main(fp: string) {
 };
 
 // main('/app/database/SensorData/2024-10-25-18-49-27.json');
-// main('../../database/SensorData/2024-10-25-18-49-27.json');
+main('../../database/SensorData/2024-10-27-10-37-07.json');

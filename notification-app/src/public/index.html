@@ -1,0 +1,35 @@
+<html lang="ja">
+<head>
+    <title>WebPush example</title>
+    <link rel="manifest" href="manifest.json"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png"> <!-- needed for phone PWA app icon -->
+</head>
+<body>
+<button onclick="subscribe()">Subscribe</button>
+<p id="target"></p>
+<script>
+    const VAPID_PUBLIC_KEY = '';
+    navigator.serviceWorker.register('/serviceworker.js');
+
+    function subscribe() {
+        navigator.serviceWorker.ready.then(async function (serviceWorker) {
+            if (!serviceWorker.pushManager) {
+                // Maybe iOS on iPhone or iPad - should ask for adding to Home Screen
+                alert('pushManager is not enabled');
+                return;
+            }            
+            let subscriptionOptions = {
+                userVisibleOnly: true,
+                applicationServerKey: VAPID_PUBLIC_KEY
+            };
+            let subscription = await serviceWorker.pushManager.subscribe(subscriptionOptions);
+            console.log('Subscription token:', subscription.toJSON());
+	    document.getElementById('target').textContent = JSON.stringify(subscription);
+        });
+    }
+</script>
+</body>
+</html>

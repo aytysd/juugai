@@ -46,12 +46,12 @@ export default function PredictPoint(data: SensorData) : PredictPointResult {
     const targetData = combination[i];
     for(let k = 0; k < 3; k++) {
       let circles : Circle[] = [];
-      let thirdNode = undefined;
+      let evalElement = undefined;
 
       for (let j = 0; j < 3; j++) {
         const element = targetData[j];
         if(j === k) {
-          thirdNode = element["node"]!;
+          evalElement = element!;
         } else {
           const node = element["node"]!;
           const distance = element["distance"];
@@ -65,11 +65,11 @@ export default function PredictPoint(data: SensorData) : PredictPointResult {
       const intersecs = findIntersections(circles[0], circles[1]);
       if (intersecs.type == FindIntersectionsResultType.FOUND) {
 
-        const d1 = getDistance(intersecs.results![0], thirdNode!.pos);
-        const d2 = getDistance(intersecs.results![1], thirdNode!.pos);
+        const d1 = getDistance(intersecs.results![0], evalElement!.node!.pos);
+        const d2 = getDistance(intersecs.results![1], evalElement!.node!.pos);
 
-        const likelihood1 = Math.abs(d1 - targetData[2].distance);
-        const likelihood2 = Math.abs(d2 - targetData[2].distance);
+        const likelihood1 = Math.abs(d1 - evalElement!.distance);
+        const likelihood2 = Math.abs(d2 - evalElement!.distance);
 
         likelihoods.push({
           p: likelihood1 < likelihood2 ? intersecs.results![0] : intersecs.results![1],

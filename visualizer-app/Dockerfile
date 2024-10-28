@@ -10,6 +10,12 @@ RUN npm install
 
 # EXPOSE 80
 
+# COPY src ./src
+# COPY public ./public
+# COPY ./tsconfig.json .
+# COPY ./next.config.ts .
+
+CMD ["npm", "run", "dev"]
 
 # RUN httpd
 
