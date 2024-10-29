@@ -15,7 +15,7 @@ RUN npm install
 # COPY ./tsconfig.json .
 # COPY ./next.config.ts .
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev1"]
 
 # RUN httpd
 
