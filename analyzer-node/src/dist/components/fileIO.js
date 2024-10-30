@@ -1,6 +1,5 @@
 import * as fs from 'fs';
 import moment from 'moment';
-import nodes from './Node.js';
 "use strict";
 export default function extractFileData(fp) {
     try {
@@ -10,11 +9,13 @@ export default function extractFileData(fp) {
         var processedJsonData = jsonData.map((value, index, array) => {
             const ts = moment(value["timestamp"], "HH-mm-ss");
             const distance = value["distance"];
-            const node = nodes.get(value["node"]);
+            const x = value["x"];
+            const y = value["y"];
             const cordinalDirectionInStr = value["cordinalDirection"];
             let newValue = {
                 timestamp: ts,
-                node: node,
+                x: x,
+                y: y,
                 distance: distance,
                 cordinalDirection: cordinalDirectionInStr
             };

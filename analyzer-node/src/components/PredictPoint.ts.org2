@@ -53,9 +53,10 @@ export default function PredictPoint(data: SensorData) : PredictPointResult {
         if(j === k) {
           evalElement = element!;
         } else {
-          const node = element["node"]!;
+          const x = element["x"];
+          const y = element["y"];
           const distance = element["distance"];
-          const circle: Circle = { center: node.pos, radius: distance };
+          const circle: Circle = { center: {x, y}, radius: distance };
           circles.push(circle);
         }
 
@@ -65,8 +66,8 @@ export default function PredictPoint(data: SensorData) : PredictPointResult {
       const intersecs = findIntersections(circles[0], circles[1]);
       if (intersecs.type == FindIntersectionsResultType.FOUND) {
 
-        const d1 = getDistance(intersecs.results![0], evalElement!.node!.pos);
-        const d2 = getDistance(intersecs.results![1], evalElement!.node!.pos);
+        const d1 = getDistance(intersecs.results![0], {x: evalElement!.x, y: evalElement!.y});
+        const d2 = getDistance(intersecs.results![1], {x: evalElement!.x, y: evalElement!.y});
 
         const likelihood1 = Math.abs(d1 - evalElement!.distance);
         const likelihood2 = Math.abs(d2 - evalElement!.distance);

@@ -4,8 +4,9 @@ import BaseGraphComponent from "./(BaseGraph)/BaseGraphComponent";
 import MapComponent from "./Map";
 import SensorNodesComponent from './(SensorNode)/SensorNodesComponent';
 import AnimalPathComponent from './(Path)/AnimalPathComponent';
-import DateTimeSelector from './(DateTime)/DateTimeUI';
+import DateTimeSelector from './DateTimeUI';
 import TimeSelector from './(Time)/TimeUI';
+import PathAccuracyComponent from "./PathAccuracy";
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
                 <TimeSelector>
                 </TimeSelector>
             </DateTimeSelector> 
+            <PathAccuracyComponent/>    
         </>
     )
 }

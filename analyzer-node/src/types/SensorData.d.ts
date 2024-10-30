@@ -5,7 +5,8 @@ import type CordinalDirection from './CordinalDirection';
 
 export type SensorDataRow = {
     timestamp: moment.Moment;
-    node: Node | undefined;
+    x: number;
+    y: number
     distance: number;
     cordinalDirection: string
 

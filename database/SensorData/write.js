@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const file = './2024-10-25-18-49-27.json';
+const file = './2024-10-29-14-40-06.json';
 // JSONファイルの読み込み
 fs.readFile(file, 'utf8', (err, data) => {
   if (err) {
@@ -13,10 +13,10 @@ fs.readFile(file, 'utf8', (err, data) => {
 
   // 新しいデータを追加するためのマッピング
   const nodeCoordinates = {
-    node1: { lat: 70, long: 70 },
-    node2: { lat: 70, long: -70 },
-    node3: { lat: -70, long: 70 },
-    node4: { lat: -70, long: -70 }
+    node1: { y: 70, x: 70 },
+    node2: { y: 70, x: -70 },
+    node3: { y: -70, x: 70 },
+    node4: { y: -70, x: -70 }
   };
 
   // 処理
@@ -34,8 +34,8 @@ fs.readFile(file, 'utf8', (err, data) => {
       updatedData.push({
         timestamp: item.timestamp, // 元のタイムスタンプを保持
         distance: item.distance,
-        lat: nodeCoordinates[item.node].lat,
-        long: nodeCoordinates[item.node].long,
+        y: nodeCoordinates[item.node].y,
+        x: nodeCoordinates[item.node].x,
         cordinalDirection: item.cordinalDirection
       });
     }

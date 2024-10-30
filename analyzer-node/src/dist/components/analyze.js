@@ -27,5 +27,6 @@ export default function main(fp) {
 }
 ;
 // main('/app/database/SensorData/2024-10-25-18-49-27.json');
-main('../../database/SensorData/2024-10-27-10-37-07.json');
+main('../../database/SensorData/2024-10-29-14-40-06.json');
+// main('../../database/SensorData/2024-10-25-18-49-27.json');
 //# sourceMappingURL=analyze.js.map

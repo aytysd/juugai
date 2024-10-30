@@ -15,12 +15,14 @@ export default function extractFileData(fp: string) : SensorData | undefined {
     var processedJsonData : SensorData = jsonData.map((value: any, index: number, array: any) => {
       const ts: moment.Moment = moment(value["timestamp"], "HH-mm-ss");
       const distance = value["distance"] as number;
-      const node = nodes.get(value["node"] as string); 
+      const x = value["x"] as number;
+      const y = value["y"] as number;
       const cordinalDirectionInStr = value["cordinalDirection"] as string;
 
       let newValue : SensorDataRow = {
         timestamp: ts,
-        node: node,
+        x: x,
+        y: y,
         distance: distance,
         cordinalDirection: cordinalDirectionInStr
       };

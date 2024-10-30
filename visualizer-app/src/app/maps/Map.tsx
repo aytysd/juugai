@@ -18,9 +18,11 @@ const MapComponent: React.FC<MapComponentProps> = ({ children }) => {
     const mapRef = useRef<L.Map | null>(null);
     const markerRefs = useRef<L.Marker[]>([]);
     const circleRefs = useRef<L.Circle[]>([]);
-    
+
     const predictedPathRef = useRef<L.Polyline | null>(null);
     const pathRef = useRef<L.Polyline | null>(null);
+    const predictedPointRef = useRef<L.Marker | null>(null);
+    const pointRef = useRef<L.Marker | null>(null);
 
     const { path, sensorData, predictedPath, convertXY2LatLng, getPredictedPathGeo, getPathGeo } = useDisplayDataContext();
     const { selectedTiming } = useSelectedTimingContext();
@@ -37,9 +39,9 @@ const MapComponent: React.FC<MapComponentProps> = ({ children }) => {
                 const latLng = [convertXY2LatLng(x, y).lat, convertXY2LatLng(x, y).lon];
 
                 const customIcon = L.icon({
-                    iconUrl: './ping.jpg',
+                    iconUrl: './ping_blue.png',
                     iconSize: [18, 38],
-                    iconAnchor: [19, 19],
+                    iconAnchor: [9, 30],
                 });
 
                 const defaultIcon = new L.Icon.Default();
@@ -83,6 +85,27 @@ const MapComponent: React.FC<MapComponentProps> = ({ children }) => {
 
         }
 
+        if(selectedTiming) {
+
+            const customIcon = L.icon({
+                iconUrl: './ping_red.png',
+                iconSize: [18, 38],
+                iconAnchor: [9, 30],
+            });
+
+            const latLng = getPathGeo().map((point) => {
+                if(point.timestamp === selectedTiming)
+                    return [point.lat, point.lon] as [number, number];
+                else 
+                    return null;
+            }).filter(item => item !== null);
+
+            if(pointRef.current)
+                mapRef.current?.removeLayer(pointRef.current);
+
+            pointRef.current = L.marker([latLng[0][0], latLng[0][1]], { icon: customIcon }).addTo(mapRef.current);
+        }
+
     }
 
     const drawPredictedPath = (predictedPath: Path) => {
@@ -101,6 +124,28 @@ const MapComponent: React.FC<MapComponentProps> = ({ children }) => {
 
             mapRef.current.fitBounds(predictedPathRef.current.getBounds());
 
+        }
+
+        if(selectedTiming) {
+
+            const customIcon = L.icon({
+                iconUrl: './ping_yellow.png',
+                iconSize: [18, 38],
+                iconAnchor: [9, 30],
+            });
+
+            const latLng = getPredictedPathGeo().map((point) => {
+                if(point.timestamp === selectedTiming)
+                    return [point.lat, point.lon] as [number, number];
+                else 
+                    return null;
+            }).filter(item => item !== null);
+
+            if(predictedPointRef.current)
+                mapRef.current?.removeLayer(predictedPointRef.current);
+
+            if(latLng.length > 0)
+                predictedPointRef.current = L.marker([latLng[0][0], latLng[0][1]], { icon: customIcon }).addTo(mapRef.current);
         }
 
     }
@@ -128,14 +173,14 @@ const MapComponent: React.FC<MapComponentProps> = ({ children }) => {
             }).addTo(mapRef.current);
 
 
-            const latLng = [GWGeo.lat, GWGeo.lon];
+            // const latLng = [GWGeo.lat, GWGeo.lon];
 
-            const customIcon = L.icon({
-                iconUrl: './ping.jpg',
-                iconSize: [18, 38],
-                iconAnchor: [19, 19],
-            });
-            const marker = L.marker(latLng, { icon: customIcon }).addTo(mapRef.current);
+            // const customIcon = L.icon({
+            //     iconUrl: './ping.jpg',
+            //     iconSize: [18, 38],
+            //     iconAnchor: [19, 19],
+            // });
+            // const marker = L.marker(latLng, { icon: customIcon }).addTo(mapRef.current);
         }
 
         return () => {
@@ -156,13 +201,13 @@ const MapComponent: React.FC<MapComponentProps> = ({ children }) => {
         if (mapRef.current && predictedPath) {
             drawPredictedPath(predictedPath);
         }
-    }, [predictedPath])
+    }, [predictedPath, selectedTiming])
 
     useEffect(() => {
         if (mapRef.current && path) {
             drawPath(path);
         }
-    }, [path])
+    }, [path, selectedTiming])
 
     return (
         <div id="map" style={{ height: '500px' }}>
