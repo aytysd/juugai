@@ -9,7 +9,8 @@ export async function POST(req) {
   const results = {};
 
   try {
-    const sensorDataPath = path.join('../database/SensorData', `${datetime}.json`);
+    const sensorDataPath = path.join('/app/database/SensorData', `${datetime}.json`);
+    // const sensorDataPath = path.join('../database/SensorData', `${datetime}.json`);
     const jsonData = await fs.readFile(sensorDataPath, 'utf8'); // ファイルを非同期に読み込む
     results.sensorData = JSON.parse(jsonData); // JSON文字列をオブジェクトに変換
   } catch (error) {
@@ -18,7 +19,8 @@ export async function POST(req) {
   }
 
   try {
-    const predictedPathPath = path.join('../database/PredictedPathData', `${datetime}-out.json`);
+    const predictedPathPath = path.join('/app/database/PredictedPathData', `${datetime}-out.json`);
+    // const predictedPathPath = path.join('../database/PredictedPathData', `${datetime}-out.json`);
     const jsonData = await fs.readFile(predictedPathPath, 'utf8'); // ファイルを非同期に読み込む
     results.predictedPath = JSON.parse(jsonData); // JSON文字列をオブジェクトに変換
   } catch (error) {
@@ -27,7 +29,8 @@ export async function POST(req) {
   }
 
   try {
-    const pathDataPath = path.join('../database/PathData', `${datetime}-traj.json`);
+    const pathDataPath = path.join('/app/database/PathData', `${datetime}-traj.json`);
+    // const pathDataPath = path.join('../database/PathData', `${datetime}-traj.json`);
     const jsonData = await fs.readFile(pathDataPath, 'utf8'); // ファイルを非同期に読み込む
     results.path = JSON.parse(jsonData); // JSON文字列をオブジェクトに変換
   } catch (error) {

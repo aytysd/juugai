@@ -7,7 +7,7 @@ services:
     container_name: reverse-proxy
     depends_on:
       # - notification-app
-      - visualizer-app
+      # - visualizer-app
       - analyzer-node
     ports:
       - 80:80
@@ -52,23 +52,23 @@ services:
   #     - inside
 
   # マップアプリ(ビジュアライザ)
-  visualizer-app:
-    build: ./visualizer-app
-    image: visualizer-app
-    container_name: visualizer-app
-    volumes:
-      - ./visualizer-app/src:/app/src
-      - ./visualizer-app/src/config/httpd.conf:/etc/apache2/httpd.conf
-      - ./database:/app/database
-    init: true
-    command: node src/app.js
-    tty: true
-    stdin_open: true
-    ports:
-      - 3000:3000
-    networks:
-      - inside
-      - surface
+  # visualizer-app:
+  #   build: ./visualizer-app
+  #   image: visualizer-app
+  #   container_name: visualizer-app
+  #   volumes:
+  #     - ./visualizer-app/src:/app/src
+  #     - ./visualizer-app/src/config/httpd.conf:/etc/apache2/httpd.conf
+  #     - ./database:/app/database
+  #   init: true
+  #   command: node src/app.js
+  #   tty: true
+  #   stdin_open: true
+  #   ports:
+  #     - 3000:3000
+  #   networks:
+  #     - inside
+  #     - surface
 
 
 

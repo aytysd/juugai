@@ -6,8 +6,8 @@ export default function main(fp) {
     console.log(`fp: ${fp}`);
     const filename = path.basename(fp);
     const nameWithoutExt = path.parse(filename).name;
-    const outputFilePath = `../../database/PredictedPathData/${nameWithoutExt}-out.json`;
-    // const outputFilePath = `/app/database/PredictedPathData/${nameWithoutExt}-out.json`;
+    // const outputFilePath = `../../database/PredictedPathData/${nameWithoutExt}-out.json`;
+    const outputFilePath = `/app/database/PredictedPathData/${nameWithoutExt}-out.json`;
     const sensorData = extractFileData(fp);
     if (sensorData != undefined) {
         var jsonData = PredictPath(sensorData, 0.3);
@@ -27,6 +27,8 @@ export default function main(fp) {
 }
 ;
 // main('/app/database/SensorData/2024-10-25-18-49-27.json');
-main('../../database/SensorData/2024-10-29-14-40-06.json');
+// main('../../database/SensorData/2024-10-29-14-40-06.json');
+// main('../../database/SensorData/2024-10-31-09-26-08.json');
+// main('../../database/SensorData/2024-10-31-09-37-44.json');
 // main('../../database/SensorData/2024-10-25-18-49-27.json');
 //# sourceMappingURL=analyze.js.map

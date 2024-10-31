@@ -100,10 +100,15 @@ const MapComponent: React.FC<MapComponentProps> = ({ children }) => {
                     return null;
             }).filter(item => item !== null);
 
-            if(pointRef.current)
-                mapRef.current?.removeLayer(pointRef.current);
+            if (latLng.length > 0) {
+                if (pointRef.current)
+                    mapRef.current?.removeLayer(pointRef.current);
 
-            pointRef.current = L.marker([latLng[0][0], latLng[0][1]], { icon: customIcon }).addTo(mapRef.current);
+                pointRef.current = L.marker([latLng[0][0], latLng[0][1]], { icon: customIcon }).addTo(mapRef.current);
+
+            }
+
+
         }
 
     }

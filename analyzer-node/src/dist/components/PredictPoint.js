@@ -8,6 +8,12 @@ export var PredictPointResultType;
 ;
 let lastPredictedPoint = [0, 0];
 export default function PredictPoint(data) {
+    if (data.length <= 1) {
+        return {
+            type: PredictPointResultType.FAILED,
+            result: undefined
+        };
+    }
     // 数値微分による偏導関数
     const partialDerivativeX = (f, x, y, h = 1e-5) => {
         const result = (f(x + h, y) - f(x - h, y)) / (2 * h);
@@ -50,13 +56,6 @@ export default function PredictPoint(data) {
         ];
     };
     let options = [];
-    // const option = {
-    //   ci1: data[0]?.x,
-    //   ci2: data[0]?.y,
-    //   mu: Math.log(data[0]?.distance),
-    //   sigma: 0.5
-    // };
-    // options.push(option);
     for (const item of data) {
         const option = {
             ci1: item.x,
@@ -109,7 +108,7 @@ export default function PredictPoint(data) {
         return x;
     };
     const result = newtonMethod(lastPredictedPoint[0], lastPredictedPoint[1]);
-    if (result[0] !== null && result[1] !== null) {
+    if (result[0] && result[1]) {
         lastPredictedPoint = result;
     }
     else {

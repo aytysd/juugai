@@ -5,8 +5,8 @@ import path from 'path';
 
 export async function GET() {
   try {
-    // const directoryPath = '/app/database/SensorData';
-    const directoryPath = '../database/SensorData';
+    const directoryPath = '/app/database/SensorData';
+    // const directoryPath = '../database/SensorData';
     const files = await fs.readdir(directoryPath);
 
     // JSONファイル名から日付部分を抽出

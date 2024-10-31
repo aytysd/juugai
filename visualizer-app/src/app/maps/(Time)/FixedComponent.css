@@ -1,6 +1,6 @@
 .fixed-container {
   position: fixed; /* 固定位置 */
-  right: 10;       /* 右端に配置 */
+  right: 0;       /* 右端に配置 */
   top: 50%;       /* 垂直中央に配置 */
   transform: translateY(-50%); /* 垂直中央に調整 */
   background-color: white; /* 背景色 */

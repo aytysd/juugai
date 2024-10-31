@@ -30,6 +30,12 @@ let lastPredictedPoint: Vector = [0, 0];
 
 export default function PredictPoint(data: SensorData) : PredictPointResult {
 
+  if(data.length <= 2) {
+    return {
+      type: PredictPointResultType.FAILED,
+      result: undefined
+    };
+  }
 
   // 数値微分による偏導関数
   const partialDerivativeX = (f: (x: number, y: number) => number, x: number, y: number, h: number = 1e-5): number => {
@@ -79,15 +85,6 @@ export default function PredictPoint(data: SensorData) : PredictPointResult {
   }
 
   let options = [];
-
-  // const option = {
-  //   ci1: data[0]?.x,
-  //   ci2: data[0]?.y,
-  //   mu: Math.log(data[0]?.distance),
-  //   sigma: 0.5
-  // };
-
-  // options.push(option);
 
   for (const item of data) {
     const option = {
@@ -162,7 +159,7 @@ export default function PredictPoint(data: SensorData) : PredictPointResult {
     lastPredictedPoint[1],
   );
 
-  if(result[0] !== null && result[1] !== null) {
+  if(result[0] && result[1]) {
     lastPredictedPoint = result;
   } else {
     lastPredictedPoint = [0, 0];
