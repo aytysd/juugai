@@ -8,7 +8,7 @@ export var PredictPointResultType;
 ;
 let lastPredictedPoint = [0, 0];
 export default function PredictPoint(data) {
-    if (data.length <= 1) {
+    if (data.length <= 2) {
         return {
             type: PredictPointResultType.FAILED,
             result: undefined

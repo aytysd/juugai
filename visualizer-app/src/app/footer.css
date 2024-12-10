@@ -1,0 +1,11 @@
+footer {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.aboutus {
+    /* font-size: 43px; */
+    margin-left: auto;
+}

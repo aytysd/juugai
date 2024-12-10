@@ -3,8 +3,31 @@ import express from 'express';
 import multer from 'multer';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import webpush from 'web-push';
 const app = express();
 const port = 2000;
+// VAPIDキーの設定
+const vapidKeys = {
+    publicKey: 'BLBJ5I5FUwS-byVf3J-a1W-V9QsXraz6gCQH_yNJm7xd77UrnBlJ0a8Fdq6whPK6GJKAh2qGe5B-2SpDZZ3S8lI',
+    privateKey: 'ivDuzTpHQBV-PYpXHo_bSEACQMe7Mf3ENoNNNp-Fmj4'
+};
+// VAPIDの詳細設定
+const vapidDetails = {
+    subject: 'mailto:your-email@example.com', // アプリ運営者のメールアドレス
+    publicKey: vapidKeys.publicKey,
+    privateKey: vapidKeys.privateKey
+};
+// VAPIDの詳細をweb-pushモジュールに設定
+webpush.setVapidDetails(vapidDetails.subject, vapidDetails.publicKey, vapidDetails.privateKey);
+// プッシュ通知の購読情報（例）
+let pushSubscription = {
+    endpoint: '',
+    expirationTime: null,
+    keys: {
+        p256dh: '',
+        auth: ''
+    }
+};
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         if (file.originalname === "traj.json") {
@@ -47,11 +70,34 @@ app.post("/sensor-data", upload.single('file'), (req, res) => {
     console.log('File  uploaded:', req.file);
     if (req.file) {
         analyze(req.file.path);
+        // // プッシュ通知のペイロード
+        // const payload = JSON.stringify({ title: 'animals detected!', body: 'animals detected!' });
+        webpush.sendNotification(pushSubscription, JSON.stringify({
+            title: '解析完了しました。',
+        })).then(response => {
+            console.log('Push notification sent successfully:', response);
+        }).catch(error => {
+            console.error('Error sending push notification:', error);
+        });
         res.send("success!!");
     }
     res.send("failed!!");
 });
 app.post("/traj-data", upload.single('file'), (req, res) => {
     console.log('File  uploaded:', req.file);
+});
+app.post("/web-push-register", (req, res) => {
+    const { auth, endpoint, p256dh } = req.body;
+    pushSubscription.endpoint = endpoint;
+    pushSubscription.expirationTime = null;
+    pushSubscription.keys.auth = auth;
+    pushSubscription.keys.p256dh = p256dh;
+    // レスポンスとして成功メッセージを返す
+    res.json({
+        message: 'Data received successfully!',
+        auth,
+        endpoint,
+        p256dh
+    });
 });
 //# sourceMappingURL=server.js.map

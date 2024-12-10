@@ -18,13 +18,15 @@ export default function extractFileData(fp: string) : SensorData | undefined {
       const x = value["x"] as number;
       const y = value["y"] as number;
       const cordinalDirectionInStr = value["cordinalDirection"] as string;
+      const size = value["size"] as number;
 
       let newValue : SensorDataRow = {
         timestamp: ts,
         x: x,
         y: y,
         distance: distance,
-        cordinalDirection: cordinalDirectionInStr
+        cordinalDirection: cordinalDirectionInStr,
+        size: size
       };
 
       return newValue;

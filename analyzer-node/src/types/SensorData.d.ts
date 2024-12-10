@@ -8,8 +8,8 @@ export type SensorDataRow = {
     x: number;
     y: number
     distance: number;
-    cordinalDirection: string
-
+    cordinalDirection: string;
+    size: number;
 };
 
 

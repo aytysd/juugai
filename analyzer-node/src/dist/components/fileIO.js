@@ -12,12 +12,14 @@ export default function extractFileData(fp) {
             const x = value["x"];
             const y = value["y"];
             const cordinalDirectionInStr = value["cordinalDirection"];
+            const size = value["size"];
             let newValue = {
                 timestamp: ts,
                 x: x,
                 y: y,
                 distance: distance,
-                cordinalDirection: cordinalDirectionInStr
+                cordinalDirection: cordinalDirectionInStr,
+                size: size
             };
             return newValue;
         });
