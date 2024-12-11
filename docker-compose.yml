@@ -1,23 +1,5 @@
 version: "3"
 services:
-  # リバースプロキシ
-  reverse-proxy:
-    build: ./reverse-proxy
-    image: reverse-proxy-img:latest
-    container_name: reverse-proxy
-    depends_on:
-      # - notification-app
-      - visualizer-app
-      - analyzer-node
-    ports:
-      - 80:80
-    volumes:
-      - ./reverse-proxy/config/nginx.conf:/etc/nginx/nginx.conf
-    networks:
-      - surface
-      - inside
-    environment:
-      - TZ=Asia/Tokyo
 
   # データ解析ノード
   analyzer-node:
@@ -36,22 +18,17 @@ services:
           ipv4_address: 192.168.10.3
         surface: 
 
-
-
-  # 通知アプリ
-  # notification-app:
-  #   # build: ./notification-app
-  #   # image: notification-app-img
-  #   image: nginx # demo image
-  #   container_name: notification-app
-  #   # ports:
-  #   #   - 
-  #   # volumes:
-  #   #   - 
-  #   # command: echo notification-app > /usr/share/nginx/html/index.html
-  #   # echoコマンドが終了するとコンテナもなぜか終了するからコメントアウトした
-  #   networks:
-  #     - inside
+  user_db:
+    build: ./user_db
+    image: user_db
+    container_name: user_db
+    ports:
+      - 3306:3306 
+    volumes:
+      - .user_db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      inside:
+        ipv4_address: 192.168.10.5
 
   # マップアプリ(ビジュアライザ)
   visualizer-app:

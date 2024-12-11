@@ -2,7 +2,12 @@ import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
 
+import mysql from 'mysql2/promise';
+
 export async function POST(req) {
+
+  connect();
+
   // リクエストボディをJSONとして取得
   const { auth, endpoint, p256dh } = await req.json();
 
@@ -47,4 +52,18 @@ export async function POST(req) {
 
   // 結果をJSON形式で返す
   return NextResponse.json(results);
+}
+
+async function connect() {
+  const connection = await mysql.createConnection({
+    host: '192.168.10.5',  // ホスト名
+    user: 'root',
+    password: 'root_password',
+    database: 'user_db'
+  });
+
+  const [rows, fields] = await connection.execute('SELECT * FROM users');
+  console.log(rows);
+
+  await connection.end();
 }
