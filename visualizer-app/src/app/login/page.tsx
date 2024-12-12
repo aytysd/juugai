@@ -3,27 +3,38 @@
 import React, { useState } from 'react';
 
 function LoginForm() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // ここにログイン処理のロジックを追加
-    console.log('Username:', username);
-    console.log('Password:', password);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    console.log("hello");
+    console.log("email:", formData.get('email'));
+    console.log("password:", formData.get('password'));
+
+    try {
+      const response = await fetch('api/login', {
+        method: 'POST',
+        body: new URLSearchParams(formData),
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      });
+
+      const data = await response.json();
+    } catch (error) {
+    }
   };
 
   return (
     <div className="login-form">
-      <h2>ログイン</h2>
       <form onSubmit={handleSubmit}>
+        <h2>ログイン</h2>
         <div>
-          <label htmlFor="username">ユーザー名:</label>
+          <label htmlFor="email">メールアドレス:</label>
           <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            id="email"
+            name="email"
             required
           />
         </div>
@@ -32,8 +43,7 @@ function LoginForm() {
           <input
             type="password"
             id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name="password"
             required
           />
         </div>

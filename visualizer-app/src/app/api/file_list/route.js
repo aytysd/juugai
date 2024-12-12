@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 
+
 export async function GET() {
   try {
     const directoryPath = '/app/database/SensorData';
@@ -21,3 +22,4 @@ export async function GET() {
     return NextResponse.json({ error: 'ファイルリストの取得に失敗しました' }, { status: 500 });
   }
 }
+

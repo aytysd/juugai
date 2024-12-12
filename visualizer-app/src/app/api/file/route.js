@@ -38,5 +38,6 @@ export async function POST(req) {
     results.path = null; // エラーの場合はnullを設定
   }
 
+
   return NextResponse.json(results); // 結果をJSON形式で返す
 }

@@ -6,13 +6,15 @@ services:
       build: ./analyzer-node
       image: analyzer-node
       volumes:
-        - ./analyzer-node/src:/app/src
+        - ./analyzer-node/build:/app/src
         - ./database:/app/database
       container_name: analyzer-node
-      command: node /app/src/dist/server.js
+      command: node /app/src/server.js
       tty: true 
       init: true
       working_dir: /app/
+      ports:
+        - 2000:2000
       networks:
         inside:
           ipv4_address: 192.168.10.3
@@ -25,7 +27,7 @@ services:
     ports:
       - 3306:3306 
     volumes:
-      - .user_db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./user_db/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       inside:
         ipv4_address: 192.168.10.5
@@ -52,6 +54,8 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
+      - MAIL_AUTH_USER=aytysd@gmail.com
+      - MAIL_AUTH_PASS=2suH_VMNZPiBgpK_46BW
 
 
 
