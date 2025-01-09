@@ -103,12 +103,14 @@ app.post("/sensor-data" , upload.single('file'), async (req: Request, res: Respo
     //   text: "This is a test mail",
     // });
 
+    const jstOf
+
     rows.forEach(row => {
       const info = transporter.sendMail({
         from: "animalmiru@gmail.com",
         to: row.notification_email,
-        subject: "TestMail",
-        text: "This is a test mail",
+        subject: "Animal Detected!!!",
+        text: "check out the webpage.",
       });
     }); // 
 

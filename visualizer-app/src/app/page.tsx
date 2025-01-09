@@ -16,7 +16,6 @@ export default function Home() {
   return (
     <>
       <Header></Header>
-      <SubscribeButton title="test" />
 
       <MapComponent>
         {undefined}

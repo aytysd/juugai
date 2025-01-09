@@ -1,0 +1,662 @@
+[
+  {
+    "timestamp": "14-44-36",
+    "x": -35,
+    "y": -35,
+    "distance": 46.8400002,
+    "cordinalDirection": "North",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-36",
+    "x": 35,
+    "y": 35,
+    "distance": 108.099998,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-36",
+    "x": 35,
+    "y": -35,
+    "distance": 107.580002,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-36",
+    "x": -35,
+    "y": 35,
+    "distance": 48.0200005,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-38",
+    "x": -35,
+    "y": -35,
+    "distance": 41.1100006,
+    "cordinalDirection": "North",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-38",
+    "x": 35,
+    "y": 35,
+    "distance": 102.349998,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-38",
+    "x": 35,
+    "y": -35,
+    "distance": 100.599998,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-38",
+    "x": -35,
+    "y": 35,
+    "distance": 45.2200012,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-39",
+    "x": -35,
+    "y": -35,
+    "distance": 35.8300018,
+    "cordinalDirection": "North",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-39",
+    "x": 35,
+    "y": 35,
+    "distance": 96.7699966,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-39",
+    "x": 35,
+    "y": -35,
+    "distance": 93.6200027,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-39",
+    "x": -35,
+    "y": 35,
+    "distance": 43.3899994,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-40",
+    "x": -35,
+    "y": -35,
+    "distance": 26.6000004,
+    "cordinalDirection": "North",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-40",
+    "x": 35,
+    "y": 35,
+    "distance": 92.7600021,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-40",
+    "x": 35,
+    "y": -35,
+    "distance": 84.3300018,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-40",
+    "x": -35,
+    "y": 35,
+    "distance": 46.9099998,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-41",
+    "x": -35,
+    "y": -35,
+    "distance": 18.2099991,
+    "cordinalDirection": "North",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-41",
+    "x": 35,
+    "y": 35,
+    "distance": 89.6900024,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-41",
+    "x": 35,
+    "y": -35,
+    "distance": 75.2200012,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-41",
+    "x": -35,
+    "y": 35,
+    "distance": 52.1300011,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-42",
+    "x": -35,
+    "y": -35,
+    "distance": 9.52999973,
+    "cordinalDirection": "North",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-42",
+    "x": 35,
+    "y": 35,
+    "distance": 89.6800003,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-42",
+    "x": 35,
+    "y": -35,
+    "distance": 65.2300034,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-42",
+    "x": -35,
+    "y": 35,
+    "distance": 62.2700005,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-43",
+    "x": -35,
+    "y": -35,
+    "distance": 13.6999998,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-43",
+    "x": 35,
+    "y": 35,
+    "distance": 91.5400009,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-43",
+    "x": 35,
+    "y": -35,
+    "distance": 56.4900017,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-43",
+    "x": -35,
+    "y": 35,
+    "distance": 73.3199997,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-44",
+    "x": -35,
+    "y": -35,
+    "distance": 23.5699997,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-44",
+    "x": 35,
+    "y": 35,
+    "distance": 89.1500015,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-44",
+    "x": 35,
+    "y": -35,
+    "distance": 47.4700012,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-44",
+    "x": -35,
+    "y": 35,
+    "distance": 79.0599976,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-45",
+    "x": -35,
+    "y": -35,
+    "distance": 33.5099983,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-45",
+    "x": 35,
+    "y": 35,
+    "distance": 87.8399963,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-45",
+    "x": 35,
+    "y": -35,
+    "distance": 38.9300003,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-45",
+    "x": -35,
+    "y": 35,
+    "distance": 85.5800018,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-46",
+    "x": -35,
+    "y": -35,
+    "distance": 40.1800003,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-46",
+    "x": 35,
+    "y": 35,
+    "distance": 89.3099976,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-46",
+    "x": 35,
+    "y": -35,
+    "distance": 34.7599983,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-46",
+    "x": -35,
+    "y": 35,
+    "distance": 91.5599976,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-47",
+    "x": -35,
+    "y": -35,
+    "distance": 46.9500008,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-47",
+    "x": 35,
+    "y": 35,
+    "distance": 91.3000031,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-47",
+    "x": 35,
+    "y": -35,
+    "distance": 31.6200008,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-47",
+    "x": -35,
+    "y": 35,
+    "distance": 97.6800003,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-48",
+    "x": -35,
+    "y": -35,
+    "distance": 50.1699982,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-48",
+    "x": 35,
+    "y": 35,
+    "distance": 94.0599976,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-48",
+    "x": 35,
+    "y": -35,
+    "distance": 32.0699997,
+    "cordinalDirection": "West",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-48",
+    "x": -35,
+    "y": 35,
+    "distance": 101.669998,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-49",
+    "x": -35,
+    "y": -35,
+    "distance": 53.4900017,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-49",
+    "x": 35,
+    "y": 35,
+    "distance": 96.9100037,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-49",
+    "x": 35,
+    "y": -35,
+    "distance": 33.0099983,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-49",
+    "x": -35,
+    "y": 35,
+    "distance": 105.660004,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-50",
+    "x": -35,
+    "y": -35,
+    "distance": 60.0999985,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-50",
+    "x": 35,
+    "y": 35,
+    "distance": 101.010002,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-50",
+    "x": 35,
+    "y": -35,
+    "distance": 34.3199997,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-50",
+    "x": -35,
+    "y": 35,
+    "distance": 112.410004,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-51",
+    "x": -35,
+    "y": -35,
+    "distance": 66.7900009,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-51",
+    "x": 35,
+    "y": 35,
+    "distance": 105.400002,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-51",
+    "x": 35,
+    "y": -35,
+    "distance": 36.9300003,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-51",
+    "x": -35,
+    "y": 35,
+    "distance": 119.199997,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-52",
+    "x": -35,
+    "y": -35,
+    "distance": 70.7799988,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-52",
+    "x": 35,
+    "y": 35,
+    "distance": 106.769997,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-52",
+    "x": 35,
+    "y": -35,
+    "distance": 37.5299988,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-52",
+    "x": -35,
+    "y": 35,
+    "distance": 122.480003,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-53",
+    "x": -35,
+    "y": -35,
+    "distance": 74.7600021,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-53",
+    "x": 35,
+    "y": 35,
+    "distance": 108.260002,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-53",
+    "x": 35,
+    "y": -35,
+    "distance": 38.5299988,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-53",
+    "x": -35,
+    "y": 35,
+    "distance": 125.800003,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-54",
+    "x": -35,
+    "y": -35,
+    "distance": 75.6999969,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-54",
+    "x": 35,
+    "y": 35,
+    "distance": 109,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-54",
+    "x": 35,
+    "y": -35,
+    "distance": 39.2099991,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-54",
+    "x": -35,
+    "y": 35,
+    "distance": 126.790001,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-55",
+    "x": -35,
+    "y": -35,
+    "distance": 76.6500015,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-55",
+    "x": 35,
+    "y": 35,
+    "distance": 109.739998,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-55",
+    "x": 35,
+    "y": -35,
+    "distance": 39.9000015,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-55",
+    "x": -35,
+    "y": 35,
+    "distance": 127.769997,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-56",
+    "x": -35,
+    "y": -35,
+    "distance": 74.6800003,
+    "cordinalDirection": "East",
+    "size": "128",
+    "uniqueObjID": "46"
+  },
+  {
+    "timestamp": "14-44-56",
+    "x": 35,
+    "y": 35,
+    "distance": 108.5,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-56",
+    "x": 35,
+    "y": -35,
+    "distance": 38.7900009,
+    "cordinalDirection": "South",
+    "size": "128"
+  },
+  {
+    "timestamp": "14-44-56",
+    "x": -35,
+    "y": 35,
+    "distance": 125.870003,
+    "cordinalDirection": "South",
+    "size": "128"
+  }
+]
