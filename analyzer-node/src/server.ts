@@ -4,6 +4,7 @@ import express, { Request, Response } from 'express';
 import multer, { FileFilterCallback } from 'multer';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 import nodemailer from 'nodemailer';
 import mysql, { RowDataPacket } from 'mysql2/promise';
 
@@ -101,14 +102,29 @@ app.post("/sensor-data" , upload.single('file'), async (req: Request, res: Respo
     //   to: rows[0].notification_email,
     //   subject: "TestMail",
     //   text: "This is a test mail",
-    // });
+
+    const jstOffset = 9 * 60 * 60 * 1000; // 9時間をミリ秒に変換
+    const jstTime = new Date(Date.now() + jstOffset);   // });
 
     rows.forEach(row => {
       const info = transporter.sendMail({
         from: "animalmiru@gmail.com",
         to: row.notification_email,
-        subject: "TestMail",
-        text: "This is a test mail",
+        subject: "動物を検知しました！！",
+        text: `
+        ${jstTime.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}に動物を検知しました。
+        予想される動物の種類は鹿、熊、イノシシのいずれかです。
+
+        破られたフェンスの座標は北緯35.123456、東経135.123456です。
+
+        このメールは自動送信です。返信はできません。`,
+        attachments: [
+          {
+            filename: 'detected_animal.jpg',
+            content: fs.readFileSync('./test_path.png'),
+            encoding: 'base64'
+          }
+        ]
       });
     }); // 
 
