@@ -103,7 +103,8 @@ app.post("/sensor-data" , upload.single('file'), async (req: Request, res: Respo
     //   subject: "TestMail",
     //   text: "This is a test mail",
 
-    const jstOffset = 9 * 60 * 60 * 1000; // 9時間をミリ秒に変換
+    const jstOffset = 0; // なんかなくても動くっぽい？
+    // const jstOffset = 9 * 60 * 60 * 1000; // 9時間をミリ秒に変換
     const jstTime = new Date(Date.now() + jstOffset);   // });
 
     rows.forEach(row => {
@@ -111,20 +112,18 @@ app.post("/sensor-data" , upload.single('file'), async (req: Request, res: Respo
         from: "animalmiru@gmail.com",
         to: row.notification_email,
         subject: "動物を検知しました！！",
-        text: `
-        ${jstTime.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}に動物を検知しました。
-        予想される動物の種類は鹿、熊、イノシシのいずれかです。
-
-        破られたフェンスの座標は北緯35.123456、東経135.123456です。
-
-        このメールは自動送信です。返信はできません。`,
-        attachments: [
-          {
-            filename: 'detected_animal.jpg',
-            content: fs.readFileSync('./test_path.png'),
-            encoding: 'base64'
-          }
-        ]
+        html: `
+        <p>${jstTime.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}に動物を検知しました。</p>
+        <p>予想される動物の種類は鹿です。<a href="http://localhost:3000/">こちらのリンク</a>から確認してください。</p>
+        <p>このメールは自動送信です。返信はできません。</p>
+        `,
+        // attachments: [
+        //   {
+        //     filename: 'detected_animal.jpg',
+        //     content: fs.readFileSync('./test_path.png'),
+        //     encoding: 'base64'
+        //   }
+        // ]
       });
     }); // 
 

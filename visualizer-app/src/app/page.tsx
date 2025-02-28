@@ -1,14 +1,12 @@
 "use client";
 
 import * as webpush from 'web-push';
-import SubscribeButton from './subscribeButton';
 import Header from './header';
 
 
 import MapComponent from "./(maps)/Map";
 import DateTimeSelector from './(maps)/DateTimeUI';
 import TimeSelector from './(maps)/TimeUI';
-import PathAccuracyComponent from "./(maps)/PathAccuracy";
 import { DisplayDataProvider } from '@/providers/SelectedDataProvider';
 
 export default function Home() {
@@ -24,7 +22,6 @@ export default function Home() {
         <TimeSelector>
         </TimeSelector>
       </DateTimeSelector>
-      <PathAccuracyComponent />
 
 
     </>

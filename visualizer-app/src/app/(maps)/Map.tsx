@@ -54,7 +54,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ children }) => {
 
                 return L.circle(latLng, {
                     radius: distance,
-                    color: 'blue',
+                    color: '#FF9999',
                     fill: false,
                     fillColor: '#30f',
                     fillOpacity: 0.5

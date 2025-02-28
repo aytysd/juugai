@@ -6,9 +6,13 @@ import csv
 import math
 
 # PredictedDataフォルダのパスを指定
-predicted_path_data_folder = "./PredictedPathData"
+# predicted_path_data_folder = "./PredictedPathData"
+# path_data_folder = "./PathData"
+# csv_folder = "./csv"
+
+predicted_path_data_folder = "PredictedPathData"
 path_data_folder = "./PathData"
-csv_folder = "./csv"
+csv_folder = "csv"
 
 
 # フォルダ内の全てのJSONファイルのパスを取得
